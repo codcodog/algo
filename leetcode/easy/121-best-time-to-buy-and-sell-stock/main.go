@@ -10,19 +10,24 @@ func main() {
 }
 
 func maxProfit(prices []int) int {
-	min := math.MaxInt64
 	var maxProfit int
-	var tmp int
+	min := math.MaxInt64
 
 	for _, value := range prices {
 		if value < min {
 			min = value
 		}
-
-		tmp = value - min
-		if tmp > maxProfit {
-			maxProfit = tmp
-		}
+		maxProfit = max((value - min), maxProfit)
 	}
 	return maxProfit
+}
+
+func max(num1, num2 int) int {
+	var max int
+	if num1 > num2 {
+		max = num1
+	} else {
+		max = num2
+	}
+	return max
 }
