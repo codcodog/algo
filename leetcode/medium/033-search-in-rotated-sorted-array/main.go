@@ -37,7 +37,8 @@ func search(nums []int, target int) int {
 	return -1
 }
 
-// 先找到旋转的位置，再拆分两部分分别求 target
+// 先找到旋转的位置，再拆分为两部分，利用二分法分别求 target
+// 例如：[4, 5, 6, 7, 0, 1, 2] => [4, 5, 6, 7], [0, 1, 2]
 func search1(nums []int, target int) int {
 	rotateIndex := findRotateIndex(nums)
 	if target == nums[rotateIndex] {
