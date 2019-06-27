@@ -11,11 +11,13 @@ func main() {
 func heapSort(list []int) {
 	length := len(list)
 
-	// 从最后一个父节点开始调整堆
+	// 从最后一个父结点开始调整堆
 	for i := length / 2; i > -1; i-- {
 		heap(list, i, length-1)
 	}
 
+	// 开始堆排序
+	// 把根结点和最后一个结点交换，并把交换后的最后一个结点移出堆
 	for i := length - 1; i > 0; i-- {
 		list[i], list[0] = list[0], list[i]
 		heap(list, 0, i-1)
