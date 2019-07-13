@@ -9,6 +9,9 @@ func main() {
 	fmt.Println(exist(input, "ABCB"))   // expected: false
 }
 
+//			(x, y-1)
+// (x-1, y)  (x, y)   (x+1, y)
+//			(x, y+1)
 func exist(board [][]byte, word string) bool {
 	for y := 0; y < len(board); y++ {
 		for x := 0; x < len(board[y]); x++ {
