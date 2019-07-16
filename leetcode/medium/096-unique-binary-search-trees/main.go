@@ -7,7 +7,7 @@ func main() {
 	fmt.Println(numTrees(input)) // expected: 5
 }
 
-// F(i,n)= G(i−1) * G(n−i)
+// F(i,n) = G(i−1) * G(n−i)
 func numTrees(n int) int {
 	G := make([]int, n+1)
 	G[0], G[1] = 1, 1
