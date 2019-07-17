@@ -20,10 +20,7 @@ func helper(node *TreeNode, lower, upper int) bool {
 	}
 
 	val := node.Val
-	if val <= lower {
-		return false
-	}
-	if val >= upper {
+	if val <= lower || val >= upper {
 		return false
 	}
 	return helper(node.Left, lower, val) && helper(node.Right, val, upper)
