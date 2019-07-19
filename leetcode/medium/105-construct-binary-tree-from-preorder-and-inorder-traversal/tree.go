@@ -23,6 +23,6 @@ func helper(preStart, inStart, inEnd int, preorder, inorder []int) *TreeNode {
 		}
 	}
 	root.Left = helper(preStart+1, inStart, inIndex-1, preorder, inorder)
-	root.Right = helper(preStart+inIndex-inStart+1, inIndex+1, inEnd, preorder, inorder)
+	root.Right = helper(preStart+inIndex-inStart+1, inIndex+1, inEnd, preorder, inorder) // (inIndex - inStart) is the size of root's left subtree
 	return root
 }
